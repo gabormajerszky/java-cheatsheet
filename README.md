@@ -4,8 +4,10 @@
 How should my environment variables be set up?
 -
 You need to do 2 things:
+```
 1. Set the user variable JAVA_HOME to the JDK's root folder
 2. Append the system variable Path with the the JDK's bin folder
+```
 
 
 What order should my modifiers be in?
