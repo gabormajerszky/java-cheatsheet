@@ -150,3 +150,4 @@ byte[] serialized = SerializationUtils.serialize(original);
 Object deserialized = SerializationUtils.deserialize(serialized);
 Assert.assertEquals(original, deserialized);
 ```
+
