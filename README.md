@@ -29,6 +29,21 @@ private static String readFileUtf(String pathString) throws IOException {
 ```
 
 
+How do I read a json file?
+-
+An easy way is to use jackson-databind:
+```
+public static JsonNode createNodeFromFile(String path) {
+    ObjectMapper mapper = new ObjectMapper();
+    try {
+        return mapper.readTree(ClassLoader.getSystemResourceAsStream(path));
+    } catch (Exception e) {
+        throw new IllegalArgumentException("Could not read file " + path, e);
+    }
+}
+```
+
+
 How do I convert a number to binary?
 -
 If it's an int:
