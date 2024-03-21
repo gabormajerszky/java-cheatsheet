@@ -166,3 +166,15 @@ Object deserialized = SerializationUtils.deserialize(serialized);
 Assert.assertEquals(original, deserialized);
 ```
 
+
+How can I send simple REST requests without 3rd party libraries?
+-
+Using HttpRequest, HttpResponse, and HttpClient from the java standard library:
+```
+HttpRequest request = HttpRequest.newBuilder()
+        .uri(new URI("https://httpbin.org/get"))
+        .GET()
+        .build();
+HttpResponse<String> response = HttpClient.newHttpClient()
+        .send(request, HttpResponse.BodyHandlers.ofString());
+```
